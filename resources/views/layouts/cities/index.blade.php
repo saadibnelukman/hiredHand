@@ -1,16 +1,19 @@
 @extends('layouts.main')
 @section('content')
+<div class="row">
+    <div class="col-9 offset-1">
 
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Cities</h1>
-    </div>
 
-    <div class="card shadow mb-4">
+    <div class="card shadow border-left-primary mb-4">
         <div class="card-header py-3">
-            <a href="{{route('cities.create')}}" class="btn btn-primary btn-icon-split">
+            <div class="d-sm-flex align-items-center justify-content-between">
+                <h1 class="h3 mb-0 text-gray-800">Cities</h1>
+                <a href="{{route('cities.create')}}" class="btn btn-primary btn-icon-split float-right">
 
-                <span class="text">Create</span>
-            </a>
+                    <span class="text">Create</span>
+                </a>
+            </div>
+
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -50,5 +53,7 @@
             </div>
         </div>
     </div>
+    </div>
+</div>
 
 @endsection

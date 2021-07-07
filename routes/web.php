@@ -34,4 +34,4 @@ Route::post('users/{user}/change-passwd',[\App\Http\Controllers\Backend\ChangePa
 
 Route::get('{any}', function () {
     return view('layouts.employees.index');
-})->where('{any}', '.*');
+})->where('any', '.*');

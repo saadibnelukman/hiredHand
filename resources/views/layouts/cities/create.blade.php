@@ -1,21 +1,26 @@
 @extends('layouts.main')
 @section('content')
 
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Cities</h1>
-    </div>
 
-    <div class="card shadow mb-4">
+<div class="row">
+    <div class="col-9 offset-1">
+
+    <div class="card shadow border-left-primary mb-4">
         <div class="card-header py-3">
-            <a href="{{route('cities.index')}}" class="btn btn-primary btn-icon-split">
+            <div class="d-sm-flex align-items-center justify-content-between">
+                <h1 class="h3 mb-0 text-gray-800">Cities</h1>
+                <a href="{{route('cities.index')}}" class="btn btn-primary btn-icon-split">
 
-                <span class="text">Back</span>
-            </a>
+                    <span class="icon text-white-50"><i class="fas fa-arrow-left"></i></span>
+                    <span class="text">Back</span>
+                </a>
+            </div>
         </div>
         <div class="card-body">
             <form action="{{route('cities.store')}}" method="post">
                 @csrf
                 <div class="mb-3">
+                    <label for="state_id" class="form-label">{{ __('State Name') }}</label>
                     <select name="state_id" class="form-control" aria-label="Default select example">
                         {{--                        <option selected>Open this select menu</option>--}}
                         @foreach($states as $state)
@@ -38,9 +43,13 @@
                                     </span>
                     @enderror
                 </div>
-                <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
+                <button type="submit" class="mt-2 btn btn-success btn-icon-split"><span class="icon text-white-50">
+                                            <i class="fas fa-check"></i>
+                                        </span>
+                    <span class="text">{{ __('Submit') }}</span></button>
             </form>
         </div>
     </div>
-
+</div>
+</div>
 @endsection

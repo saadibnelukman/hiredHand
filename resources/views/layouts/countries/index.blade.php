@@ -1,16 +1,16 @@
 @extends('layouts.main')
 @section('content')
 
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Countries</h1>
-    </div>
-
-    <div class="card shadow mb-4">
+    <div class="row">
+        <div class="col-9 offset-1">
+    <div class="card shadow border-left-primary mb-4">
         <div class="card-header py-3">
-            <a href="{{route('countries.create')}}" class="btn btn-primary btn-icon-split">
-
-                <span class="text">Create</span>
-            </a>
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h3 mb-0 text-gray-800">Countries</h1>
+                <a href="{{route('countries.create')}}" class="btn btn-primary btn-icon-split">
+                    <span class="text">Create</span>
+                </a>
+            </div>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -48,6 +48,8 @@
                     </tbody>
                 </table>
             </div>
+        </div>
+    </div>
         </div>
     </div>
 
